@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace GoF_Strategie_Taschenrechner
 {
@@ -7,7 +8,7 @@ namespace GoF_Strategie_Taschenrechner
         static void Main(string[] args) //Bootstrapping
         {
 
-            new ConsolenUI(new Parser(), new Rechner()).Start();
+            new ConsolenUI(new RegExParser(), new Rechner()).Start();
 
             Console.WriteLine("---Ende---");
             Console.ReadKey();
@@ -30,11 +31,28 @@ namespace GoF_Strategie_Taschenrechner
     {
         public Formel Parse(String input) {
             Formel output = new Formel();
+
             string[] operanden = input.Split('+'); //TODO: regex
 
             output.Operand1 = Convert.ToInt32(operanden[0]);
             output.Operand2 = Convert.ToInt32(operanden[1]);
             output.Operator = '+';
+
+            return output;
+        }
+    }
+
+    class RegExParser : IParser
+    {
+        public Formel Parse(String input)
+        {
+            Formel output = new Formel();
+
+            var match = Regex.Match(input,@"(\d+)\s*(\D)\s*(\d+)"); //TODO: regex
+
+            output.Operand1 = Convert.ToInt32(match.Groups[1].Value);
+            output.Operand2 = Convert.ToInt32(match.Groups[3].Value);
+            output.Operator = match.Groups[2].Value[0];
 
             return output;
         }
