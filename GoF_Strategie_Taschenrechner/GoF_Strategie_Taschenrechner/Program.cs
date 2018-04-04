@@ -4,10 +4,10 @@ namespace GoF_Strategie_Taschenrechner
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //Bootstrapping
         {
 
-            new ConsolenUI().Start();
+            new ConsolenUI(new Parser(), new Rechner()).Start();
 
             Console.WriteLine("---Ende---");
             Console.ReadKey();
@@ -21,7 +21,12 @@ namespace GoF_Strategie_Taschenrechner
         public char Operator { get; set; }
     }
 
-    class Parser
+    interface IParser
+    {
+        Formel Parse(String input);
+    }
+
+    class Parser : IParser
     {
         public Formel Parse(String input) {
             Formel output = new Formel();
@@ -35,7 +40,12 @@ namespace GoF_Strategie_Taschenrechner
         }
     }
 
-    class Rechner
+    interface IRechner
+    {
+        int Rechne(Formel formel);
+    }
+
+    class Rechner : IRechner
     {
         public int Rechne(Formel formel)
         {
@@ -55,14 +65,21 @@ namespace GoF_Strategie_Taschenrechner
     }
 
     class ConsolenUI{
+        public ConsolenUI(IParser parser, IRechner rechner)
+        {
+            this.parser = parser;
+            this.rechner = rechner;
+        }
+
+
+        private readonly IParser parser;
+        private readonly IRechner rechner;
+
         public void Start()
         {
             Console.WriteLine("Formel eingeben:");
             string eingabe = Console.ReadLine(); // "2 + 2"
-
-            Parser parser = new Parser();
-            Rechner rechner = new Rechner();
-
+            
             Formel x = parser.Parse(eingabe);
             var ergebnis = rechner.Rechne(x);
 
