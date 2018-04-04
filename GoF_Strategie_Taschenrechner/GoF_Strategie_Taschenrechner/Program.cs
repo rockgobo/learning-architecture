@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace GoF_Strategie_Taschenrechner
@@ -8,7 +9,10 @@ namespace GoF_Strategie_Taschenrechner
         static void Main(string[] args) //Bootstrapping
         {
 
-            new ConsolenUI(new RegExParser(), new Rechner()).Start();
+            new ConsolenUI(
+                new RegExParser(), 
+                new EntkoppelterRechner(new Addition(), new Substraction(), new Multiplication())
+            ).Start();
 
             Console.WriteLine("---Ende---");
             Console.ReadKey();
@@ -79,6 +83,62 @@ namespace GoF_Strategie_Taschenrechner
             {
                 throw new ArgumentException("Operator unbekannt");
             }
+        }
+    }
+
+    class EntkoppelterRechner : IRechner
+    {
+        public EntkoppelterRechner(params IRechenOperation[] operationen)
+        {
+            this.operationen = operationen;
+        }
+        private readonly IRechenOperation[] operationen;
+
+        public int Rechne(Formel formel)
+        {
+            foreach(IRechenOperation o in operationen)
+            {
+                if(o.Operator == formel.Operator)
+                {
+                    return o.Berechne(formel);
+                }
+            }
+
+            throw new ArgumentException("Operator unbekannt");
+        }
+    }
+
+    interface IRechenOperation
+    {
+        char Operator { get; }
+        int Berechne(Formel f);
+    }
+
+    class Addition : IRechenOperation
+    {
+        public char Operator => '+';
+
+        public int Berechne(Formel f)
+        {
+            return f.Operand1 + f.Operand2;
+        }
+    }
+    class Substraction : IRechenOperation
+    {
+        public char Operator => '-';
+
+        public int Berechne(Formel f)
+        {
+            return f.Operand1 - f.Operand2;
+        }
+    }
+    class Multiplication : IRechenOperation
+    {
+        public char Operator => '*';
+
+        public int Berechne(Formel f)
+        {
+            return f.Operand1 * f.Operand2;
         }
     }
 
