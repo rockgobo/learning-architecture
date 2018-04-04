@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF_Strategie_Taschenrechner", "GoF_Strategie_Taschenrechner\GoF_Strategie_Taschenrechner.csproj", "{FB3B4B49-7A6E-45F5-9A17-04E3141BB62E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB3B4B49-7A6E-45F5-9A17-04E3141BB62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3B4B49-7A6E-45F5-9A17-04E3141BB62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3B4B49-7A6E-45F5-9A17-04E3141BB62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3B4B49-7A6E-45F5-9A17-04E3141BB62E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B78DACA9-FA8E-46BA-9250-CDDAB3721F35}
+	EndGlobalSection
+EndGlobal

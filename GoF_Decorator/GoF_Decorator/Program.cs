@@ -6,7 +6,7 @@ namespace GoF_Decorator
     {
         static void Main(string[] args)
         {
-            var pizza = Pizza.Bäcker.mitKäse().mitSalami().Generate();
+            var pizza = Pizza.Bäcker.mitKäse().mitSalami().mitSchinken().Generate();
 
             Console.WriteLine(pizza.Price);
             
