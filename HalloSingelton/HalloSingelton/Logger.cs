@@ -12,11 +12,19 @@ namespace HalloSingleton
 
         private static int instanceCounter;
         private static Logger instance;
+        private static Object _lockObject = new object();
         public static Logger Instance
         {
             get
             {
-                if (instance == null) instance = new Logger();
+                if (instance == null)
+                {   
+                    //Multi threading save 
+                    lock (_lockObject)
+                    {
+                        instance = new Logger();
+                    }
+                }
                 return instance;
             }
         }
