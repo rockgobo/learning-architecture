@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace GoF_Strategie_Taschenrechner
+namespace GoF_Strategie_Taschenrechnerl
 {
     class Program
     {
