@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.model", "lifb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.data.ef", "lifbi.bookers.data.ef\lifbi.bookers.data.ef.csproj", "{B0DF225E-F3C9-4B78-B5FB-DBA8A2B0592E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.data.ef.tests", "lifbi.bookers.data.ef.tests\lifbi.bookers.data.ef.tests.csproj", "{3DD91914-FEE7-4CFF-BEF0-47C63FDF8958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B0DF225E-F3C9-4B78-B5FB-DBA8A2B0592E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0DF225E-F3C9-4B78-B5FB-DBA8A2B0592E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0DF225E-F3C9-4B78-B5FB-DBA8A2B0592E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD91914-FEE7-4CFF-BEF0-47C63FDF8958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD91914-FEE7-4CFF-BEF0-47C63FDF8958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD91914-FEE7-4CFF-BEF0-47C63FDF8958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD91914-FEE7-4CFF-BEF0-47C63FDF8958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

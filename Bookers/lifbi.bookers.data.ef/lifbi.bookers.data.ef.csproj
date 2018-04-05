@@ -8,4 +8,8 @@
     <PackageReference Include="EntityFramework" Version="6.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\lifbi.bookers.model\lifbi.bookers.model.csproj" />
+  </ItemGroup>
+
 </Project>
