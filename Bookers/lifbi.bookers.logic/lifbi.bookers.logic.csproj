@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\lifbi.bookers.data.ef\lifbi.bookers.data.ef.csproj" />
+    <ProjectReference Include="..\lifbi.bookers.model\lifbi.bookers.model.csproj" />
+  </ItemGroup>
+
 </Project>
