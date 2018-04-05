@@ -28,8 +28,13 @@ namespace lifbi.bookers.ui.asp.Controllers
         public ActionResult Details(int id)
         {
             var book = core.Repository.GetByID<Book>(id);
-            int alleBücher = core.Repository.GetAll<Stock>().Where(s => s.Book.ID == id).Sum(b => b.Amount);
-            var model = (book, alleBücher);
+
+            //Variante 1: Query im Speicher
+            //int allBooks = core.Repository.GetAll<Stock>().Where(s => s.Book.ID == id).Sum(b => b.Amount);
+
+            //Variante 2: Query über EF
+            int allBooks = core.Repository.Query<Stock>().Where(s => s.Book.ID == id).Sum(b => b.Amount);
+            var model = (book, allBooks);
             return View(model);
         }
 
