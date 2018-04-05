@@ -1,0 +1,57 @@
+﻿@model (lifbi.bookers.model.Book, System.Int32)
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item1.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item1.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item1.Pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.Pages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item1.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item2)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Item1.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
