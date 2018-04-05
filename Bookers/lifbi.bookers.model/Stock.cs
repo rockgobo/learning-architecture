@@ -2,7 +2,8 @@
 {
     public class Stock : Entity
     {
-        public Book Book { get; set; }
+        //Virtual damit EF in die andere Tabelle gehen kann und die Daten von Buch sich holen
+        public virtual Book Book { get; set; }
         public int Amount { get; set; }
     }
 }
