@@ -6,7 +6,7 @@ using System.Text;
 
 namespace lifbi.bookers.data.ef
 {
-    class EFRepository : IRepository
+    public class EFRepository : IRepository
     {
         public EFRepository(EFContext context) => this.context = context;
         private readonly EFContext context;
