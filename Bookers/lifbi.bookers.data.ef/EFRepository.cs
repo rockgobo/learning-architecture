@@ -40,5 +40,10 @@ namespace lifbi.bookers.data.ef
                 context.Entry(loaded).CurrentValues.SetValues(entity);
             }
         }
+
+        public void Delete<T>(T entity) where T : Entity
+        {
+            context.Set<T>().Remove(entity);
+        }
     }
 }
