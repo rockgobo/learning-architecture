@@ -45,5 +45,10 @@ namespace lifbi.bookers.data.ef
         {
             context.Set<T>().Remove(entity);
         }
+
+        public IQueryable<T> Query<T>() where T : Entity
+        {
+            return context.Set<T>();
+        }
     }
 }

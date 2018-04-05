@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace lifbi.bookers.model
@@ -11,6 +12,7 @@ namespace lifbi.bookers.model
         void Add<T>(T entity) where T : Entity;
         void Update<T>(T entity) where T : Entity;
         void Delete<T>(T entity) where T : Entity;
+        IQueryable<T> Query<T>() where T : Entity;
         void Save();
     }
 }
