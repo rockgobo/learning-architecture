@@ -1,0 +1,56 @@
+﻿<Window x:Class="lifbi.bookers.ui.wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lifbi.bookers.ui.wpf"
+        mc:Ignorable="d"
+        Title="Bücherei WPF" Height="350" Width="525">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel></local:MainWindowViewModel>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="listViewBooks" Grid.Column="0" ItemsSource="{Binding Books}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ID, StringFormat='[{0}] '}" FontSize="10"></TextBlock>
+                        <TextBlock Text="{Binding Title}" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Grid DataContext="{Binding ElementName=listViewBooks, Path=SelectedItem}" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="ID:" />
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding ID}" />
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Title:" />
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Title}" />
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Author:" />
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Author}" />
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Pages:" />
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Pages}" />
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="Price:" />
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Price}" />
+        </Grid>
+    </Grid>
+</Window>

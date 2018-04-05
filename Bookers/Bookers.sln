@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.ui.console", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.ui.asp", "lifbi.bookers.ui.asp\lifbi.bookers.ui.asp.csproj", "{031A0B73-A7CE-4F0B-8EBE-8BEACF908D17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.ui.wpf", "lifbi.bookers.ui.wpf\lifbi.bookers.ui.wpf.csproj", "{AB8059FD-E824-4E48-90A9-5781514C9320}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{031A0B73-A7CE-4F0B-8EBE-8BEACF908D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{031A0B73-A7CE-4F0B-8EBE-8BEACF908D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{031A0B73-A7CE-4F0B-8EBE-8BEACF908D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8059FD-E824-4E48-90A9-5781514C9320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8059FD-E824-4E48-90A9-5781514C9320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8059FD-E824-4E48-90A9-5781514C9320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8059FD-E824-4E48-90A9-5781514C9320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
