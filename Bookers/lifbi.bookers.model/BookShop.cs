@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lifbi.bookers.model
 {
-    class BookShop : Entity
+    public class BookShop : Entity
     {
         public string Name { get; set; }
         public string Address { get; set; }
