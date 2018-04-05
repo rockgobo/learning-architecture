@@ -14,6 +14,6 @@ namespace lifbi.bookers.model
         /// "virtual" weil EF dann einen eigenen getter implementieren kann
         /// "HashSet" damit EF keine doppelten Einträge lädt.
         /// </summary>
-        public virtual HashSet<Stock> Inventory { get; set; }
+        public virtual HashSet<Stock> Inventory { get; set; } = new HashSet<Stock>();
     }
 }
