@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using lifbi.bookers.data.googleBooks;
 
 namespace lifbi.bookers.data.ef
 {
@@ -46,6 +47,8 @@ namespace lifbi.bookers.data.ef
                 return stockRepository;
             }
         }
+
+        public IBooksRepository BooksRepository => new BookRepository();
 
         public IUnitOfWorkRepository<T> GetRepository<T>() where T : Entity
         {

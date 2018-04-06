@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\lifbi.bookers.data.googleBooks\lifbi.bookers.data.googleBooks.csproj" />
     <ProjectReference Include="..\lifbi.bookers.model\lifbi.bookers.model.csproj" />
   </ItemGroup>
 

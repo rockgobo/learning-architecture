@@ -29,6 +29,9 @@ namespace lifbi.bookers.ui.console
 
             Console.WriteLine("Anzahl der Bücher im Umlauf: {0} ", core.UnitOfWork.StockRepository.GetAmountOfTotalBooksInCiruclation());
 
+            Console.WriteLine("Anzahl der Bücher von Google: {0} ", core.UnitOfWork.BooksRepository.GetAll().Count());
+
+
             Console.WriteLine("--- Ende ---");
             Console.ReadKey();
         }
