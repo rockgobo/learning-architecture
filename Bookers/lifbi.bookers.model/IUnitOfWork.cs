@@ -7,6 +7,7 @@ namespace lifbi.bookers.model
     public interface IUnitOfWork
     {
         IBookShopRepository BookShopRepository { get; } // Ganz streng: 1 Repo pro Datentyp
+        IStockRepository StockRepository { get; } // Ganz streng: 1 Repo pro Datentyp
 
         /// <summary>
         /// Entscheidet welches Repository nach außen gegeben wird, je nachdem welcher Datentyp angefragt wird

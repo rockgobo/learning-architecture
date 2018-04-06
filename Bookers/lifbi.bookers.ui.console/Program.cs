@@ -25,8 +25,9 @@ namespace lifbi.bookers.ui.console
             }
 
             var amazonLikeBookShop = core.UnitOfWork.BookShopRepository.GetBookShopWithMostInventoryValue();
+            Console.WriteLine("Dieser Händler hat am meisten Bücher: {0} mit {1} Euro", amazonLikeBookShop.Name, amazonLikeBookShop.Inventory.Sum(i => i.Amount * i.Book.Price));
 
-            Console.WriteLine("Dieser Händler hat am meisten Bücher: {0} mit {1} Büchern", amazonLikeBookShop.Name, amazonLikeBookShop.Inventory.Sum(i => i.Amount));
+            Console.WriteLine("Anzahl der Bücher im Umlauf: {0} ", core.UnitOfWork.StockRepository.GetAmountOfTotalBooksInCiruclation());
 
             Console.WriteLine("--- Ende ---");
             Console.ReadKey();

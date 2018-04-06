@@ -30,7 +30,23 @@ namespace lifbi.bookers.data.ef
                 return bookShopRepository;
             }
         }
-        
+
+        private IStockRepository stockRepository;
+        public IStockRepository StockRepository
+        {
+            get
+            {
+                if (stockRepository == null)
+                {
+                    lock (_syncObject)
+                    {
+                        stockRepository = stockRepository ?? new StockRepository(context);
+                    }
+                }
+                return stockRepository;
+            }
+        }
+
         public IUnitOfWorkRepository<T> GetRepository<T>() where T : Entity
         {
             return new EFBaseUnitOfWorkRepository<T>(context);
