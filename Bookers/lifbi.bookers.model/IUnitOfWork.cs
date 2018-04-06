@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lifbi.bookers.model
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         IBookShopRepository BookShopRepository { get; } // Ganz streng: 1 Repo pro Datentyp
 
@@ -14,5 +14,7 @@ namespace lifbi.bookers.model
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         IUnitOfWorkRepository<T> GetRepository<T>() where T : Entity;
+
+        void Save();
     }
 }
