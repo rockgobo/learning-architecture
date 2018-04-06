@@ -1,6 +1,7 @@
 ﻿using lifbi.bookers.model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace lifbi.bookers.data.ef
@@ -10,6 +11,7 @@ namespace lifbi.bookers.data.ef
         public EFUnitOfWork()
         {
             context = new EFContext();
+            repositories = new List<IUnitOfWorkRepository<Entity>>();
         }
         private readonly EFContext context;
 
@@ -30,9 +32,14 @@ namespace lifbi.bookers.data.ef
             }
         }
 
+        private List<IUnitOfWorkRepository<Entity>> repositories;
+
         public IUnitOfWorkRepository<T> GetRepository<T>() where T : Entity
         {
-            return new EFBaseUnitOfWorkRepository<T>(context);
+            if( repositories.Any(x => x.GetType() == typeof(IUnitOfWorkRepository<T>)) ){
+                repositories.Add((IUnitOfWorkRepository<Entity>)new EFBaseUnitOfWorkRepository<T>(context));
+            }
+            return (IUnitOfWorkRepository<T>)repositories.First(x => x.GetType() == typeof(IUnitOfWorkRepository<T>));
         }
 
         public void Save()
