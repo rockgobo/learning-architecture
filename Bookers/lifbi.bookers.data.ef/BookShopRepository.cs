@@ -12,7 +12,11 @@ namespace lifbi.bookers.data.ef
 
         public BookShop GetBookShopWithMostInventoryValue()
         {
-            throw new NotImplementedException();
+            return GetAll()
+                    .Select(x => (Shop: x, Total: x.Inventory.Sum(i => i.Amount)))
+                    .OrderByDescending(x => x.Total)
+                    .First()
+                    .Shop;
         }
     }
 }
