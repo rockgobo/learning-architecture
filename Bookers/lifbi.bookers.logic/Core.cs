@@ -6,10 +6,12 @@ namespace lifbi.bookers.logic
 {
     public class Core
     {
-        public IRepository Repository { get; set; }
-
+        //Construtor
         public Core(IRepository repository) => this.Repository = repository;
         public Core() : this(new EFRepository(new EFContext())) { }
+
+        //Properties
+        public IRepository Repository { get; set; }
 
         public void GenerateDemoData()
         {
