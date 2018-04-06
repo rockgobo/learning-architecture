@@ -2,12 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HalloXamarinForms"
+             xmlns:vm="clr-namespace:HalloXamarinForms.ViewModels"
              x:Class="HalloXamarinForms.MainPage">
-
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </ContentPage.BindingContext>
     <StackLayout>
-        <Entry Placeholder="Username"></Entry>
-        <Entry Placeholder="Password" IsPassword="True"></Entry>
-        <Button Text="Login" Clicked="buttonLogin_Clicked"></Button>
+        <Button Text="Login" Command="{Binding ClickCommand}"></Button>
+        <ListView ItemsSource="{Binding Personenliste}">
+            
+        </ListView>
+    </StackLayout>
+
+    <StackLayout VerticalOptions="Center">
+        <Entry x:Name="entryEingabe" Placeholder="deine eingabe"></Entry>
+        <Button Text=" Einfügen in die DB" Clicked="buttonEinfügen_Clicked"></Button>
+        <ListView x:Name="listViewDaten" IsPullToRefreshEnabled="True" Refreshing="listViewDaten_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>

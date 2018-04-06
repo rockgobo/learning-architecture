@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HalloXamarinForms.Services
 {
-    class PersonenService
+    public class PersonenService
     {
         public List<Person> GetPersonen()
         {
