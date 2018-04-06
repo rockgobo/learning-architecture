@@ -11,7 +11,6 @@ namespace lifbi.bookers.data.ef
         public EFUnitOfWork()
         {
             context = new EFContext();
-            repositories = new List<IUnitOfWorkRepository<Entity>>();
         }
         private readonly EFContext context;
 
@@ -31,15 +30,10 @@ namespace lifbi.bookers.data.ef
                 return bookShopRepository;
             }
         }
-
-        private List<IUnitOfWorkRepository<Entity>> repositories;
-
+        
         public IUnitOfWorkRepository<T> GetRepository<T>() where T : Entity
         {
-            if( repositories.Any(x => x.GetType() == typeof(IUnitOfWorkRepository<T>)) ){
-                repositories.Add((IUnitOfWorkRepository<Entity>)new EFBaseUnitOfWorkRepository<T>(context));
-            }
-            return (IUnitOfWorkRepository<T>)repositories.First(x => x.GetType() == typeof(IUnitOfWorkRepository<T>));
+            return new EFBaseUnitOfWorkRepository<T>(context);
         }
 
         public void Save()
