@@ -9,7 +9,7 @@ namespace lifbi.bookers.data.ef
     public class EFBaseUnitOfWorkRepository<T> : IUnitOfWorkRepository<T> where T : Entity
     {
         public EFBaseUnitOfWorkRepository(EFContext context) => this.context = context;
-        private readonly EFContext context;
+        protected readonly EFContext context;
 
         public virtual void Add(T entity) 
         {
