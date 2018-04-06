@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.ui.asp", "lif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.ui.wpf", "lifbi.bookers.ui.wpf\lifbi.bookers.ui.wpf.csproj", "{AB8059FD-E824-4E48-90A9-5781514C9320}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifbi.bookers.data.googleBooks", "lifbi.bookers.data.googleBooks\lifbi.bookers.data.googleBooks.csproj", "{CED581AE-F39A-470D-92BC-6AED919E52FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{AB8059FD-E824-4E48-90A9-5781514C9320}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB8059FD-E824-4E48-90A9-5781514C9320}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB8059FD-E824-4E48-90A9-5781514C9320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED581AE-F39A-470D-92BC-6AED919E52FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED581AE-F39A-470D-92BC-6AED919E52FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED581AE-F39A-470D-92BC-6AED919E52FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED581AE-F39A-470D-92BC-6AED919E52FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
