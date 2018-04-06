@@ -7,11 +7,13 @@ namespace lifbi.bookers.logic
     public class Core
     {
         //Construtor
-        public Core(IRepository repository) => this.Repository = repository;
-        public Core() : this(new EFRepository(new EFContext())) { }
+        public Core(IUnitOfWork unitOfWork) => this.UnitOfWork = unitOfWork;
+        public Core() : this(new EFUnitOfWork()) { }
 
         //Properties
         public IRepository Repository { get; set; }
+
+        public IUnitOfWork UnitOfWork { get; set; }
 
         public void GenerateDemoData()
         {
@@ -47,10 +49,11 @@ namespace lifbi.bookers.logic
             bs3.Inventory.Add(new Stock { Book = b8, Amount = 50 });
             bs3.Inventory.Add(new Stock { Book = b9, Amount = 322 });
 
-            Repository.Add(bs1);
-            Repository.Add(bs2);
-            Repository.Add(bs3);
-            Repository.Save();
+            var repo = UnitOfWork.GetRepository<BookShop>();
+            repo.Add(bs1);
+            repo.Add(bs2);
+            repo.Add(bs3);
+            repo.Save();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace lifbi.bookers.data.ef
 {
-    class EFUnitOfWork : IUnitOfWork
+    public class EFUnitOfWork : IUnitOfWork
     {
         public EFUnitOfWork()
         {
